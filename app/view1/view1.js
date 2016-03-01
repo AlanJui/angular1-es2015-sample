@@ -1,14 +1,30 @@
-'use strict';
+//import angularRouter from 'angular-route';
+import controller from './view1-controller';
 
-angular.module('myApp.view1', ['ngRoute'])
+let module = angular.module('view1Module', ['ngRoute']);
 
-.config(['$routeProvider', function($routeProvider) {
+module.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/view1', {
     templateUrl: 'view1/view1.html',
-    controller: 'View1Ctrl'
+    controller: controller,
+    controllerAs: 'vm'
   });
-}])
-
-.controller('View1Ctrl', [function() {
-
 }]);
+
+export default module;
+
+//'use strict';
+//
+//angular.module('myApp.view1', ['ngRoute'])
+//
+//.config(['$routeProvider', function($routeProvider) {
+//  $routeProvider.when('/view1', {
+//    templateUrl: 'view1/view1.html',
+//    controller: 'View1Ctrl'
+//  });
+//}])
+//
+//.controller('View1Ctrl', [function() {
+//
+//}]);
+
