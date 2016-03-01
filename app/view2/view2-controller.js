@@ -1,16 +1,17 @@
 class View2Controller {
 
   constructor(MemberService) {
-    this.dbService = MemberService;
+    'ngInject';
+
+    MemberService.getList().then((list) => {
+      this.memberList = list;
+    });
     this.pageTitle = '需卦';
-    this.List = this.dbService.getList();
   }
 
-  chatePageTitle() {
+  changePageTitle() {
     this.pageTitle = '訟卦';
   }
 }
-
-View2Controller.$inject = ['MemberService'];
 
 export default View2Controller;

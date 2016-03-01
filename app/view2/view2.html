@@ -1,6 +1,13 @@
 <h2>{{vm.pageTitle}}</h2>
 <p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+
+<h3>Member List</h3>
+<ul>
+  <li ng-repeat="member in vm.memberList">
+    {{member.name}}
+  </li>
+</ul>
+<!--<p>-->
+  <!--Showing of 'interpolate' filter:-->
+  <!--{{ 'Current version is v%VERSION%.' | interpolate }}-->
+<!--</p>-->

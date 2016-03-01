@@ -1,30 +1,22 @@
-//import angularRouter from 'angular-route';
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
 import controller from './view1-controller';
 
-let module = angular.module('view1Module', ['ngRoute']);
+let module = angular.module('View1Module', ['ui.router']);
 
-module.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view1', {
-    templateUrl: 'view1/view1.html',
-    controller: controller,
-    controllerAs: 'vm'
-  });
-}]);
+module
+
+  .controller('View1Controller', controller)
+
+  .config(['$stateProvider', '$urlRouterProvider',
+    function($stateProvider, $urlRouterProvider) {
+      $stateProvider
+        .state('view1', {
+          url: '/view1',
+          templateUrl: 'view1/view1.html',
+          controller: 'View1Controller',
+          controllerAs: 'vm'
+        });
+    }]);
 
 export default module;
-
-//'use strict';
-//
-//angular.module('myApp.view1', ['ngRoute'])
-//
-//.config(['$routeProvider', function($routeProvider) {
-//  $routeProvider.when('/view1', {
-//    templateUrl: 'view1/view1.html',
-//    controller: 'View1Ctrl'
-//  });
-//}])
-//
-//.controller('View1Ctrl', [function() {
-//
-//}]);
-

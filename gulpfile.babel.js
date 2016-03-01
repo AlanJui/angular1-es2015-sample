@@ -25,8 +25,8 @@ let src = {
       main: `${srcClientRoot}/app.js`,
       all: [
         `${srcClientRoot}/**/*.js`,
-        `${srcClientRoot}/bower_components`,
-        `${srcClientRoot}/${build}/**/*.js`
+        `!${srcClientRoot}/bower_components`,
+        `!${srcClientRoot}/${build}/**/*.js`
       ]
     }
   },
